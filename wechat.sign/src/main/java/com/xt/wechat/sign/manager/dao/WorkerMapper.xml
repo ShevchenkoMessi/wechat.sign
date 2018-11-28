@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="com.xt.wechat.sign.manager.dao.WorkerMapper">
+
+	<resultMap type="com.xt.wechat.sign.manager.entity.Worker" id="workerMap">
+		<id column="id" property="workerId"/>
+		<result column="worker_no" property="workerNo"/>
+		<result column="worker_name" property="workerName"/>
+		<result column="worker_school" property="workerSchool"/>
+		<result column="worker_phone" property="workerPhone"/>
+		<result column="worker_email" property="workerEmail"/>
+		<result column="worker_passwd" property="workerPasswd"/>
+	</resultMap>
+	
+	<resultMap type="com.xt.wechat.sign.student.entity.Student" id="StuInfoMap">
+  		<id column="id" property="stuId"/>
+  		<result column="stu_no" property='stuNo'/>
+  		<result column="stu_name" property='stuName'/>
+  		<result column="stu_class_id" property='stuClassId'/>
+  		<result column="stu_phone" property='stuPhone'/>
+  		<result column="stu_card" property='stuCard'/>
+  		<result column="stu_email" property='stuEmail'/>
+  		<result column="stu_passwd" property='stuPasswd'/>
+  	</resultMap>
+  	
+  	<resultMap type="com.xt.wechat.sign.teacher.entity.Teacher" id="teacherMap">
+  		<id column="id" property="teacherId"/>
+  		<result column="teacher_no" property='teacherNo'/>
+  		<result column="teacher_name" property='teacherName'/>
+  		<result column="teacher_card" property='teacherCard'/>
+  		<result column="teacher_phone" property='teacherPhone'/>
+  		<result column="teacher_email" property='teacherEmail'/>
+  		<result column="teacher_work" property='teacherWork'/>
+  		<result column="teacher_study" property='teacherStudy'/>
+  		<result column="teacher_path" property='teacherPath'/>
+  		<result column="teacher_passwd" property='teacherPasswd'/>
+  </resultMap>
+  
+  <resultMap type="com.xt.wechat.sign.student.entity.Course" id="courseMap">
+  		<id column="id" property="courseId"/>
+  		<id column="course_no" property='courseNo'/>
+  		<result column="teacher_no" property='teacherNo'/>
+  		<result column="class_no" property='classNo'/>
+  		<result column="course_name" property='courseName'/>
+  		<result column="course_time" property='courseTime'/>
+  	</resultMap>
+  	
+  	<resultMap type="com.xt.wechat.sign.teacher.entity.SignMessage" id="messageMap">
+  		<id column="id" property="messageId"/>
+  		<result column="stu_no" property="stuNo" />
+  		<result column="course_no" property="courseNo" />
+  		<result column="month_time" property="monthTime" />
+  		<result column="times" property="times" />
+  	</resultMap>
+	
+	<select id="getWorkerInfo" resultMap="workerMap" parameterType="java.lang.String">
+		select * from worker where worker_no = #{value}
+	</select>
+	
+	<insert id="insertAnnouncement">
+		insert into announcement (item,text) values (#{item},#{text})
+	</insert>
+	
+	<select id="getAnnouncement" resultType="com.xt.wechat.sign.manager.entity.Announcement">
+		select * from announcement
+	</select>
+	
+	<select id="getTeacherNoByCourse" parameterType="java.lang.String" resultType="java.lang.String">
+		select teacher_no from course where course_name like '%${value}%'	
+	</select>
+	
+	<select id="getTeachersBySub" resultMap="teacherMap">
+		select * from teacher where teacher_no in
+		<foreach collection="set" index="index" item="item" open="(" separator="," close=")">
+   			#{item}
+   		</foreach> 
+	</select>
+
+	<select id="getTeachersByName" resultMap="teacherMap" parameterType="java.lang.String">
+		select * from teacher where teacher_name like '%${value}%'
+	</select>
+	
+	<select id="getCollegeNames" resultType="java.lang.String">
+		select yuanxi from class
+	</select>
+
+	<select id="getClassIds" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select id from class where yuanxi=#{value}	
+	</select>
+
+	<select id="getStudentByClassIds" resultMap="StuInfoMap">
+		select * from student where stu_class_id in
+		<foreach collection="set" index="index" item="item" open="(" separator="," close=")">
+   			#{item}
+   		</foreach> 
+	</select>
+	
+	<select id="getStudentsByName" resultMap="StuInfoMap" parameterType="java.lang.String">
+		select * from student where stu_name like '%${value}%'
+	</select>
+	
+	<select id="getCourseByClassNo" resultMap="courseMap" parameterType="java.lang.Integer">
+		select * from course where class_no=#{value}
+	</select>
+	
+	<select id="getSignMSGOne" resultMap="messageMap">
+		select * from register where stu_no=#{stuNo} and course_no=#{courseNo}
+	</select>
+	
+	<update id="updateTeacher">
+		update teacher set teacher_no=#{teacherNo},teacher_name=#{teacherName},teacher_work=#{teacherWork} where teacher_no=#{teacherNo}
+	</update>
+	
+	<update id="updateCourse">
+		update course set course_name=#{courseName} where teacher_no=#{teacherNo} and course_no=#{courseNo}
+	</update>
+	
+	<delete id="deleteTeacher" parameterType="java.lang.String">
+		delete from teacher where teacher_no=#{value}
+	</delete>
+
+	<delete id="deleteStudent" parameterType="java.lang.String">
+		delete from student where stu_no=#{value}
+	</delete>
+	
+</mapper>  

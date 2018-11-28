@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+  <mapper namespace="com.xt.wechat.sign.student.dao.StudentMapper">
+  	<resultMap type="com.xt.wechat.sign.student.entity.Student" id="StuInfoMap">
+  		<id column="id" property="stuId"/>
+  		<result column="stu_no" property='stuNo'/>
+  		<result column="stu_name" property='stuName'/>
+  		<result column="stu_class_id" property='stuClassId'/>
+  		<result column="stu_phone" property='stuPhone'/>
+  		<result column="stu_card" property='stuCard'/>
+  		<result column="stu_email" property='stuEmail'/>
+  		<result column="stu_passwd" property='stuPasswd'/>
+  	</resultMap>
+  	
+  	<resultMap type="com.xt.wechat.sign.student.entity.Classes" id="classMap">
+  		<id column="id" property="classId"/>
+  		<id column="class_no" property='classNo'/>
+  		<result column="moniter_name" property='monitorName'/>
+  		<result column="moniter_tel" property='monitorTel'/>
+  		<result column="stu_count" property='stuCount'/>
+  		<result column="yuanxi" property='college'/>
+  		<result column="profession" property='profession'/>
+  		<result column="school" property='university'/>
+  	</resultMap>
+  	
+  	<resultMap type="com.xt.wechat.sign.student.entity.Course" id="courseMap">
+  		<id column="id" property="courseId"/>
+  		<id column="course_no" property='courseNo'/>
+  		<result column="teacher_no" property='teacherNo'/>
+  		<result column="class_no" property='classNo'/>
+  		<result column="course_name" property='courseName'/>
+  		<result column="course_time" property='courseTime'/>
+  	</resultMap>
+  	
+  	<resultMap type="com.xt.wechat.sign.student.entity.Resign" id="resignMap">
+  		<id column="id" property="resignId"/>
+  		<result column="stu_no" property='stuNo'/>
+  		<result column="course_no" property='courseNo'/>
+  		<result column="class_id" property='classId'/>
+  		<result column="reason" property='reason'/>
+  	</resultMap>
+  	
+  	<resultMap type="com.xt.wechat.sign.student.entity.Sign" id="signMap">
+  		<id column="id" property="signId"/>
+  		<id column="course_no" property='courseNo'/>
+  		<result column="stu_no" property='stuNo'/>
+  		<result column="class_no" property='classNo'/>
+  		<result column="month_time" property='monthTime'/>
+  		<result column="times" property='times'/>
+  	</resultMap>
+  	
+  	<resultMap type="com.xt.wechat.sign.teacher.entity.Location" id="locationMap">
+  		<result column="teacher_no" property="teacherNo" />
+  		<result column="teacher_latitude" property="teacherLatitude" />
+  		<result column="teacher_longitude" property="teacherLongitude" />
+  	</resultMap>
+  	  
+    <select id="getStudentByStuNo" resultMap="StuInfoMap" parameterType="java.lang.String">
+  		select * from student where stu_no = #{value}
+  	</select>
+
+    <select id="getStudentsByStuNo" resultMap="StuInfoMap">
+		select * from student where stu_no in
+		<foreach collection="set" item="item" index="index" open="(" separator="," close=")">
+		#{item}
+		</foreach>
+  	</select>
+
+    <select id="getClass" resultMap="classMap" parameterType="java.lang.Integer">
+  		select * from class where id = #{value}
+  	</select>
+  	
+  	<update id="updateStudent" parameterType="com.xt.wechat.sign.student.entity.Student">
+  		 update student set stu_name = #{stuName},stu_no = #{stuNo} where id = #{stuId}
+  	</update>
+  	
+  	<update id="updateClass" parameterType="com.xt.wechat.sign.student.entity.Classes">
+  		 update class set yuanxi = #{college},profession = #{profession},school = #{university} where id = #{classId}
+  	</update>
+  	
+  	<!-- 签到操作,先通过courseId获得Course，再通过CourseNo确定签到课程 -->
+	<select id="getCouerseById" resultMap="courseMap" parameterType="java.lang.Integer">
+		select * from course where id = #{value}	
+	</select>  
+	
+	<select id="getSignByCourseNo" resultMap="signMap">
+		select * from register where course_no = #{courseNo} and stu_no = #{stuNo} and month_time = #{monthTime}
+	</select>
+	
+	<update id="doSign" parameterType="com.xt.wechat.sign.student.entity.Sign">
+		update register set times = #{times} where course_no = #{courseNo} and month_time = #{monthTime} and stu_no = #{stuNo}
+	</update>
+	
+	<insert id="insertRegister" parameterType="com.xt.wechat.sign.student.entity.Sign">
+		insert into register (stu_no,course_no,month_time,times) values (#{stuNo},#{courseNo},#{monthTime},1)
+	</insert>
+	
+	<select id="getTeacherNoByCourseId" parameterType="java.lang.Integer" resultType="java.lang.String">
+	 	select teacher_no from course where id = #{value}
+	</select>
+	<!-- 需要修改字段名 -->
+	<insert id="addSign">
+		insert into resign (course_no,stu_no,class_id,reason) values (#{courseNo},#{stuNo},#{classId},#{reason})
+	</insert>
+	
+	<select id="getSignDetail" resultMap="signMap">
+		select * from register where course_no=#{courseNo} and stu_no=#{stuNo}
+	</select>
+	
+  	<select id="getStuNoByCourseNo" resultType="java.lang.String" parameterType="java.lang.String">
+  		select stu_no from register where course_no = #{value}
+  	</select>
+  	
+  	<select id="getStuNoByResign" resultMap="resignMap">
+  		select * from resign where class_id = #{classId} and course_no = #{courseNo}
+  	</select>
+  	
+  	<select id="getStudentsByStuNos" resultMap="StuInfoMap">
+  		select * from student where stu_no in 
+  		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+  			#{item}
+  		</foreach>
+  	</select>
+  	
+  	<select id="getRegByStuNo" resultType="java.lang.String" parameterType="java.lang.String">
+  		select course_no from register_student where stu_no=#{value}
+  	</select>
+  	
+  	<update id="insertRegByStuNo" >
+  		update register_student set course_no=#{courseNo},teacher_no=#{teacherNo} where stu_no=#{stuNo}
+  	</update>
+  	
+  	<update id="deleteRegByStuNo" parameterType="java.lang.String">
+  		update register_student set course_no=0,teacher_no=0 where teacher_no=#{value}
+  	</update>
+
+  </mapper> 
