@@ -1,0 +1,21 @@
+<view>
+<view>
+<form bindsubmit='commit'>
+ <view class='desc'> 姓名:<input  auto-focus='{{true}}' class='color' name="stuName" type='text' value="{{stuInfo.stuName}}" placeholder='请输入姓名'></input>
+ </view>
+    <view class='desc'>学号:<input name="stuNo" class='color' type='text' value="{{stuInfo.stuNo}}" placeholder='请输入学号' ></input>
+     </view>
+   <view class='desc'> 科目:<input name="mayjor" class='color' type='text' value="{{sub.array[index]}}"></input>
+    </view>
+   <view class='desc'> 教师:<input name="teacher" class='color' type='text' value="{{sub.teacher[index]}}" ></input>
+    </view>
+   <view class='desc'> 原因:<input name="reason" class='color' type='text'></input>
+    </view>
+    <view class='style'>
+    <button form-type='reset' type='warn' plain='true'>重置</button>
+    <button form-type='submit' plain="true">提交</button>
+    </view>
+    </form>
+    </view>
+    <view class='message'>{{message}}</view>
+</view>

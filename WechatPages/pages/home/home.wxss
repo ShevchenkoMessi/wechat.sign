@@ -1,0 +1,53 @@
+/* pages/home/home.wxss */
+page{
+  height: 100%;
+}
+
+.desc{
+  border: 6rpx solid gray;
+  height: 350rpx;
+  align-items: center;
+}
+
+.text{
+  font-size: 50rpx;
+  text-align: center;
+  padding: 40rpx;
+}
+
+.common{
+  padding: 4rpx;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.bc_yellow{  
+  background-color: yellow;
+}
+
+.bc_pink{  
+  background-color: pink;
+}
+
+.bc_red{  
+  background-color: red;
+}
+
+.flex_bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flex_pic{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.view{
+  height: 100rpx;
+  width: 100rpx;
+  padding-top: 50rpx;
+  padding-bottom: 20rpx;
+}

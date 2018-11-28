@@ -1,0 +1,40 @@
+/**index.wxss**/
+.desc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 375rpx;
+}
+
+.color{
+  background-color: lightgray;
+  border: 2rpx gray solid;
+}
+
+.userinfo-avatar {
+  width: 168rpx;
+  height: 168rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 40rpx;
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+}
+
+.update{
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 32rpx;
+  color: green;
+}
+
+.descc{
+  padding: 10rpx;
+}

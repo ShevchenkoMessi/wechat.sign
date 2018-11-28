@@ -1,0 +1,15 @@
+<view>
+  <block wx:if="{{index != 0}}">
+    <view class='desc'>
+        科目:{{sub.array[index]}}
+    </view>
+    <view class='desc'>
+        任课老师:  {{sub.teacher[index]}}
+    </view>
+        <view><button class='green' bindtap='doSign'>签到</button></view>
+        <view><button class='red' bindtap='addSign'>补签</button></view>
+    </block>
+    <block wx:else>
+        <view class='desc'>无</view>    
+    </block>
+</view>

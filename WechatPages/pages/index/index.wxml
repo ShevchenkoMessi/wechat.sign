@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view>
+<view class='color'>
+     <view class="desc">
+       <image wx:if="{{!hasTempFilePaths}}" class='userinfo-avatar' src='{{userInfo.avatarUrl}}'></image>
+       <image wx:if="{{hasTempFilePaths}}" class='userinfo-avatar' src='{{tempFilePaths}}'></image>
+        {{userInfo.nickName}}
+    <button wx:if="{{!hasUserInfo}}" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>获取学生信息</button>
+    </view> 
+    </view>
+    <view wx:if="{{hasUserInfo}}">
+        <form bindsubmit='submit'>
+            <view class='update' bindtap='updateMessage'>修改个人资料</view>
+           <view  class='form'>学校:<input auto-focus='{{true}}' type="text" name="university" value="{{classInfo.university}}" disabled='{{ifupdate}}'></input>
+           </view>
+            <view class='form'>
+                姓名:<input type="text" name="stuName" value="{{stuInfo.stuName}}" disabled='{{ifupdate}}'></input>
+            </view>
+            <view class='form'>
+                学号:<input type="number" name="stuNo" value="{{stuInfo.stuNo}}" disabled='{{ifupdate}}'></input>
+            </view>
+            <view class='form'>
+                 院系:<input type="text" name="college" value="{{classInfo.college}}" disabled='{{ifupdate}}'></input>
+            </view>
+            <view class='form'>
+                 专业:<input style="text-decoration:underline;" name="profession" type="text" value="{{classInfo.profession}}" disabled='{{ifupdate}}'></input>
+            </view>
+            <view style='padding:30rpx' wx:if="{{!ifupdate}}">
+                <button plain='true' form-type='submit' >提交</button>
+            </view>
+            <view wx:if="{{ifupdate}}">
+                
+                <view  class='descc'><button plain='true' type='default' bindtap='navigateToSign'>签到</button>
+                </view>
+                <view class='descc'>
+                <button plain='true' type='warn' bindtap='navigateToQuery'>查看签到信息</button>
+            </view>
+
+
+            </view>
+        </form> 
+    </view>
+</view>

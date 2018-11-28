@@ -1,0 +1,7 @@
+.desc{
+  background-color: gainsboro;
+}
+
+page{
+  height: 100%;
+}

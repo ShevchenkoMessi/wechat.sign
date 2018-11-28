@@ -1,0 +1,11 @@
+
+<!-- <view class="item_right">发布></view> -->
+<view>\n\n</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="item_left">标题: <input name="item"  placeholder="请输入标题"></input></view>
+<canvas style="width: 320px; height:30px;" canvas-id="canvasLine1"/>
+<textarea class="item_left" name="text" placeholder='请输入正文(180字以内)'></textarea>
+<view>
+    <button formType="submit">提交</button>
+  </view>
+</form>

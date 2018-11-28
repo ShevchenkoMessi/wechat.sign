@@ -1,0 +1,4 @@
+<view class='desc'>
+  <view>你的分数是:{{score}}</view>
+ <view><button plain='true' bindtap='playAgain'>再来一局</button></view> 
+</view>

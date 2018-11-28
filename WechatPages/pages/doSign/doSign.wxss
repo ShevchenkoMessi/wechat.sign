@@ -1,0 +1,21 @@
+.desc{
+  display: flex;
+  padding: 60rpx;
+  font-size:50rpx;
+  justify-content: center;
+}
+
+button{
+  display: flex;
+  justify-content: center;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+
+

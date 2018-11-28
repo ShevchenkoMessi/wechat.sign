@@ -1,0 +1,9 @@
+<!--pages/information platform/information platform.wxml-->
+
+<view wx:for="{{datas}}">
+  <view class="desc">
+        <view class='text'>{{item.item}}</view>
+        <view class='common'>{{item.text}}</view>
+    </view>
+    </view>
+

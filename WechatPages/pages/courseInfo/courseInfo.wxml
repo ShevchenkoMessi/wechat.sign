@@ -1,0 +1,26 @@
+<!--pages/teacher_get_allInfo/teacher_get_allInfo.wxml-->
+<view class='gap'>
+</view>
+<view class='pullFirst'>
+  <view wx:if="{{!gps}}">
+  <view>课程信息</view>
+  <view wx:for='{{courseInfo}}' wx:for-index='id' wx:for-item='item' class='buttonStyle'>
+  <form bindsubmit="formSubmit">
+    <input value='{{item.courseNo}}' hidden name='courseNo'></input>
+    <input value='0' hidden name='gps'></input>
+    <button form-type='submit'>{{item.courseName}}</button>
+  </form>
+  </view>
+  </view>
+  <view wx:if="{{gps}}">
+  <view>发布位置</view>
+  <view wx:for='{{courseInfo}}' wx:for-index='id' wx:for-item='item' class='buttonStyle'>
+  <form bindsubmit="formSubmit">
+    <input value='{{item.courseNo}}' hidden name='courseNo'></input>
+    <input value='{{1}}' hidden name='gps'></input>
+    <button form-type='submit'>{{item.courseName}}</button>
+  </form>
+  </view>
+  </view>
+  <!-- <button bindtap='testAAA'>11111111111111111111111</button> -->
+</view>

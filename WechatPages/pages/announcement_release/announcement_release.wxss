@@ -1,0 +1,13 @@
+.item_right{
+  display: flex;
+  flex-direction: row;  
+  justify-content: flex-end;  
+}
+
+.item_left{
+  border: 2rpx;
+  border-color: #123;
+  display: flex;
+  flex-direction: row;  
+  justify-content: flex-start;  
+}

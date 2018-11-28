@@ -1,0 +1,56 @@
+<view id="adduser">  
+    <view class = "register">
+    <image class = "img_style" src = "../images/个人中心.png"></image>
+           </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">  
+        <view class="section">  
+            <view class="section__title"><text>\t账号 :  </text></view>  
+            <view class='form-group'>  
+                <input type="text" class="input-text" name="userNo"  />  
+            </view>      
+        </view> 
+        
+         <view class="section">  
+            <view class="section__title">密码  :  </view>  
+            <view class='form-group'>   
+                <input type="text" class="input-text" name="password" placeholder="             *******    " />  
+            </view>      
+        </view>  
+        
+        <view class="section section_gap">  
+            <view >  
+                <radio-group name="role">  
+                  <label><radio class = "radio_group1" value="student"/>学生</label> 
+                  <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                  <label><radio class = "radio_group2" value="teacher"/>教师</label>  
+                  <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                  <label><radio value = "radio_group2" value="register"/>管理员</label>  
+                </radio-group>  
+            </view>      
+        </view>  
+        
+        <view class="section btn-area">  
+            <button formType="submit" class = "button_submit" bindtap='navigateToSign1'>提交</button>  
+            <button formType="reset" class = "button_reset">清空</button>  
+        </view>  
+        <view class = "text-center">  
+           <!-- <navigator url="/pages/password_get/password_get" hover-class="navigator-hover">忘记密码？？ </navigator>                     -->
+        </view> 
+        
+    </form>  
+  
+     <!-- 黑框提示并消失 -->  
+    <toast hidden="{{toast1Hidden}}" bindchange="toast1Change">  
+        {{notice_str}}  
+    </toast>  
+    <!-- 确认框 及 提示框 -->  
+    <view class="page__bd">  
+        <modal title="确认" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one">  
+            确认提交么？  
+        </modal>  
+        <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">  
+            <view> 提示 </view>  
+            <view> 清空成功 </view>  
+        </modal>  
+    </view>  
+</view>

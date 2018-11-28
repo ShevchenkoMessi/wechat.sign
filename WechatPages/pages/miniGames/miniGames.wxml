@@ -1,0 +1,5 @@
+<view class='desc'>
+<view>
+  <button plain='true' bindtap='tanSnake'>小游戏</button>
+</view>
+</view>

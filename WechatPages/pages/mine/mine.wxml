@@ -1,0 +1,39 @@
+<!--mine.wxml-->
+<!--主页面设计  -->
+<view class="container">
+  <view class="userinfo">
+        <button wx:if="{{!hasUserInfo}}" open-type='getUserInfo' bindgetuserinfo='getUserInfo'>获取管理员信息</button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <canvas style="width: 320px; height:30px;" canvas-id="canvasLine1"/>
+<!--账号信息设计  -->
+  <view wx:if="{{hasUserInfo}}">
+    <view><text class="" text-align:right>管理员账号：{{workerInfo.workerNo}}</text></view>
+    <view><text class="">任教大学：{{workerInfo.workerSchool}}</text></view>
+  </view>
+  
+<!--功能选择设计  -->
+  <view>
+    ꧁༺๑功能选择๑༻꧂
+  </view>
+<view wx:if="{{hasUserInfo}}">
+  <view class="" >
+    <view>
+      <view bindtap='publish'>|  公告发布  |</view> 
+      <text>\n</text>
+    </view>
+    <view>
+      <navigator url="../teacherIm/teacherIm">|  教师信息  |</navigator>
+      <text>\n</text>
+    </view>
+    <view>
+      <navigator url="../studentIm/studentIm">|  学生信息  |</navigator>
+      <text>\n</text>
+    </view>
+  </view>
+</view>
+</view>

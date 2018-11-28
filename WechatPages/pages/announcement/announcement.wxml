@@ -1,0 +1,14 @@
+<!--发布公告  -->
+<view class="item_center">
+  <navigator url="../announcement_release/announcement_release">|  新公告  |</navigator>
+</view>
+<canvas style="width: 320px; height:30px;" canvas-id="canvasLine1"/>
+<view wx:for="{{announcement}}">
+<view class="item_center desc">
+<text>\n</text>
+<view class="text">{{item.item}}</view>
+<text>\n</text>
+<view class="common">{{item.text}}</view>
+<!-- <canvas style="width: 320px; height: 200px;" canvas-id="firstCanvas"></canvas> -->
+</view>
+</view>

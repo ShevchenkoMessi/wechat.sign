@@ -1,0 +1,35 @@
+<!--pages/home/home.wxml-->
+<page>
+<view>
+    <view class='desc' >
+        <view class='text'>{{item}}</view>
+        <view class='common'>{{text}}</view>
+    </view>
+  
+        <swiper class='desc' indicator-dots='{{true}}' indicator-color='#efabcb' autoplay='{{true}}' interval='3000' duration='500'>
+           <swiper-item><image   src='/pages/images/20180331161405.png'></image></swiper-item> 
+           <swiper-item><image mode='aspectFit'     src='/pages/images/20180331161405.png'></image></swiper-item>
+           <swiper-item><image mode='aspectFit'       src='/pages/images/20180331161405.png'></image></swiper-item>
+        </swiper>
+        
+        <view style='background:lightgray'>
+        <view class='flex_bottom'>
+           <navigator class='flex_pic' url='/pages/index/index'><image class='view' src='/pages//images/20180331161655.png'></image></navigator>
+           <navigator class='flex_pic' ><image class='view'  src='/pages/images/20180331161725.png'></image></navigator>
+           <navigator class='flex_pic'><image class='view' src='/pages/images/20180331161710.png'></image>
+           </navigator>
+        </view>
+        <view class='flex_bottom'>
+            <navigator url='/pages/index/index'>
+                我的课表
+            </navigator>
+            <navigator url='/pages/index/index'>
+                兼职招聘
+            </navigator>
+            <navigator url='/pages/index/index'>
+                二手市场
+            </navigator>
+        </view>
+        </view>
+</view>
+</page>
