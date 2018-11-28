@@ -1,0 +1,44 @@
+<!-- <view class="item_right">修改></view> -->
+
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">姓名</text>
+    <text class="flex-cell flex-row">{{datas.stu.stuName}}</text>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">学号</text>
+    <text class="flex-cell flex-row">{{datas.stu.stuNo}}</text>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">所属院系</text>
+    <text class="flex-cell flex-row">{{datas.classes.college}}</text>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">专业</text>
+    <text class="flex-cell flex-row">{{datas.classes.profession}}</text>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">班级</text>
+    <text class="flex-cell flex-row">{{datas.classes.classNo}}</text>
+  </view>
+
+</view>
+
+<view class="item_center">
+    ꧁༺๑课程列表๑༻꧂
+  </view>
+<view wx:for="{{datas.course}}">
+  <view class="item_center">
+    <view>
+      <view data-index='{{item}}' data-text='{{datas.stu}}' bindtap='getDetail'>|  {{item.courseName}}  |</view>
+    </view>
+  </view>
+</view>
+<view class="container"> 
+ <view class="login-from">
+ <!--按钮-->
+ <view class="loginBtnView"> 
+  <button data-delete='{{datas.stu.stuNo}}' class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="deleteStudent">删除信息</button> 
+ </view> 
+ </view>
+ </view>

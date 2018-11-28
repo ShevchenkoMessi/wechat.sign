@@ -1,0 +1,47 @@
+/* pages/queryDetail/queryDetail.wxss */
+.desc{
+  display: flex;
+  padding: 10rpx;
+  font-size:50rpx;
+  justify-content:  space-around;
+}
+
+.button{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 50rpx;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+
+.sign_situlation{
+  display: flex;
+  border: 4rpx solid gray;
+  height: 37rpx;
+  padding: 20rpx;
+  background-color: lightgray;
+  font-size:35rpx;
+  justify-content: center;
+}
+
+.detail{
+  display: flex;
+  flex-direction: coloum;
+  padding: 10rpx;
+  font-size:50rpx;
+  border: 4rpx solid gray;
+  justify-content: center;
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+}
+

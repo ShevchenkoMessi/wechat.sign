@@ -1,0 +1,6 @@
+<view>
+  <view id = "" name = "" class = "">
+      <text class = "" >姓    名</text>
+      <text class = "" >学    号</text>
+  </view>
+</view>

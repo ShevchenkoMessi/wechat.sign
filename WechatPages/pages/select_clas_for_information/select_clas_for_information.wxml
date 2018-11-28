@@ -1,0 +1,23 @@
+<!--<icon type = "success" size = "50"></icon>
+<icon type = "success_no_circle" size = "50"></icon>
+<icon type = "info" size = "50" ></icon>
+<icon type = "warn" size = "50" ></icon>
+<icon type = "walting" size = "50" ></icon>
+<icon type = "cancel" size = "50"></icon>
+<icon type = "download" size = "50"></icon>
+<icon type = "search" size = "50" ></icon>
+<icon type = "clear" size = "50"></icon>
+<view style = "background:red">容器内的内容</view>
+<text style ="font-size:40px;color:red;background:blue">测试</text>
+<text style ="font-size:20px;color:blue;background:red">测试</text>
+<text class = "liuneng">{{zhanwei}}</text>
+<progress percent='52' show-info stroke-width='20' color='red' active></progress>
+<button>示例一</button>
+<button type='default'>示例二</button>
+<button type='primary'>示例三</button>
+<button type='warn'>示例四</button>
+<button size='default'>示例五</button>
+<button size='mini'>示例六</button>
+<button plain='true'>示例七</button>
+<button disabled='true'>示例八</button>
+<button loading='true'>示例九</button>--!>

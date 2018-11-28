@@ -1,0 +1,29 @@
+.text_infor{
+  margin-left: 100px;
+}
+.section_one{
+  text-align: right;
+  color: green;
+  margin-bottom: 10px;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #aaa;
+}
+.section{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.section_button{
+  margin-top: 10px;
+  
+}
+.button_agree{
+  color: green;
+  background-color: white;
+}
+.button_reject{
+  color: green;
+  background-color: white;
+}

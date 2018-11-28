@@ -1,0 +1,30 @@
+<view class="item_right">修改></view>
+
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">姓名</text>
+    <text class="flex-cell flex-row">{{student.stuName}}</text>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">学号</text>
+    <text class="flex-cell flex-row">{{student.stuNo}}</text>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">科目</text>
+    <text class="flex-cell flex-row">{{course.courseName}}</text>
+  </view>
+
+</view>
+
+<view class="item_center">
+    ꧁༺๑本学期签到情况๑༻꧂
+</view>
+<view id="panel" class="flex-column">
+<view wx:for="{{msg}}">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">2018年</text>
+    <text class="flex-cell flex-row">{{item.monthTime}}月</text>
+    <text class="flex-cell flex-row">{{item.times}}</text>
+  </view>
+</view>
+</view>

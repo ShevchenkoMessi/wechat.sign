@@ -1,0 +1,17 @@
+/* pages/querySign/querySign.wxss */
+.desc{
+  display: flex;
+  padding-top: 100rpx;
+  font-size: 50rpx;
+  padding-bottom: 60rpx;
+  color:crimson;
+  justify-content: center;
+}
+
+.flex_font{
+  display: flex;
+  border: 1px solid greenyellow;
+  font-size: 50rpx;
+  background-color: lightgrey;
+  justify-content: center;
+}

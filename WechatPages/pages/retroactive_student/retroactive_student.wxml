@@ -1,0 +1,26 @@
+<view>
+  <view class = "section_one">全部同意</view>
+  <view class = "line"></view>
+  <view class = "section">
+    <text class = "text_infor">姓名：     阿毛\n</text>
+    <text class = "text_infor">学号：     20162430607\n</text>
+    <text class = "text_infor">补签原因： （可不填）\n</text>
+  </view>
+  <view class = "section_button">
+    <button class = "button_agree">同意</button>
+    <button class = "button_reject">拒绝</button>
+  </view>
+  <view class = "line"></view>
+  
+  <view class = "section">
+    <text class = "text_infor">姓名：     阿毛\n</text>
+    <text class = "text_infor">学号：     20162430607\n</text>
+    <text class = "text_infor">补签原因： （可不填）\n</text>
+  </view>
+  <view class = "section_button">
+    <button class = "button_agree">同意</button>
+    <button class = "button_reject">拒绝</button>
+  </view>
+  <view class = "line"></view>
+  ...
+</view>

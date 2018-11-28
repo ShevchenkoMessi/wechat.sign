@@ -1,0 +1,15 @@
+
+<view class="item_center" >
+  <view>
+    ꧁༺๑功能选择๑༻꧂
+  </view> 
+
+  <view>
+    <view bindtap='searchCollege'>|  按院系查找  |</view>
+    <text>\n</text>
+  </view>
+  <view>
+    <navigator url="../sExactSearch/sExactSearch">|  精确查找  |</navigator>
+    <text>\n</text>
+  </view>
+</view>

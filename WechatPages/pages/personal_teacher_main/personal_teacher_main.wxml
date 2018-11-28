@@ -1,0 +1,36 @@
+<!--pages/personal_teacher_main/personal_teacher_main.wxml-->
+<view class='headAndNameBackgroung'>
+  <!-- <view class='toTheLeft'>设置</view> -->
+  <view class='head-sculpture-position'>
+    <image bindtap="bindViewTap" class="head-sculpture" center src="{{teacherAllInformation.avatarUrl}}"></image>
+    <text>{{teacherAllInformation.nickName}}</text>
+  </view>
+</view>
+<view>
+  <!-- <view class='toTheLeft'>修改个人信息</view> -->
+</view>
+<view>
+  <view class='singleRow'>
+    <input decode="{{true}}"value='职       称:'></input><input value="{{teacherInformation.teacherWork}}"></input>
+  </view>
+  <view class='singleRow'>
+    <input value='教职工号:'></input><input value="{{teacherInformation.teacherNo}}"></input>
+  </view>
+  <view class='singleRow'>
+    <input value='任教大学:'></input><input class='' value='{{classInformation.university}}'></input>
+  </view>
+  <view class='singleRow'>
+    <input value='任教院系:'></input><input value='{{classInformation.college}}'></input>
+  </view>
+  <!-- <view wx:for="{{courseInformation}}">
+  <view class='singleRow'>
+    <input value='任教科目:'></input><input value='{{item.courseName}}'></input>
+  </view> -->
+  <!-- </view> -->
+  <view class='buttonStyleFirst'>
+    <button bindtap='publishPosition'>发布签到位置</button>
+  </view>
+  <view class='buttonStyleFirst'>
+    <button bindtap='teacherGetAllInfo'>课堂详细信息</button>
+  </view>
+</view>

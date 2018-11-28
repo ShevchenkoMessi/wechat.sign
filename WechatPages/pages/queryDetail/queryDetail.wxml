@@ -1,0 +1,29 @@
+<view>
+    <block wx:if="{{index != 0}}">
+   
+    <view class='desc'>
+        姓名:    {{stuInfo.stuName}}
+    </view>
+    <view class='desc'>
+        学号:    {{stuInfo.stuNo}}
+    </view>
+    <view class='desc'>
+        科目:    {{sub.array[index]}}
+    </view>
+    <view class='desc'>
+        任课老师:    {{sub.teacher[index]}}
+        </view>
+        
+        <view class='sign_situlation'>
+            本学期签到情况
+        </view>
+             <view wx:for="{{signDetail}}"  class='detail'>
+          <scroll-view scroll-y="true">
+                <view class='item'>{{item.monthTime}}                      |                                    {{item.times}}次</view> 
+      </scroll-view>
+            </view>
+        </block>
+        <block wx:else>
+        <view class='desc'>您没有选中课程</view>    
+    </block>
+</view>

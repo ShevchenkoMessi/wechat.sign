@@ -1,0 +1,10 @@
+<view class="item_center" >
+  <view>
+    ꧁༺๑院系选择๑༻꧂
+  </view>
+
+  <view wx:for="{{colleges}}">
+    <view data-index="{{item}}" bindtap='getStudents'>|  {{item}}  |</view>
+    <text>\n</text>
+  </view>
+</view>

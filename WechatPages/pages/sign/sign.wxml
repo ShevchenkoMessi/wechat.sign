@@ -1,0 +1,6 @@
+<view>
+    <view class='desc'>选择课程</view>
+    <picker class='flex_font' bindchange='changeClass' range='{{sub.array}}' value='{{index}}'>
+        {{sub.array[index]}}
+    </picker> 
+</view>

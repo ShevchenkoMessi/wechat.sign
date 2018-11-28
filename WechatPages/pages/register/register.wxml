@@ -1,0 +1,7 @@
+
+                
+                <view  class='descc'><button plain='true' type='default' bindtap='navigateToSign'>签到</button>
+                </view>
+                <view class='descc'>
+                <button plain='true' type='warn' bindtap='navigateToQuery'>查看签到信息</button>
+            </view>
