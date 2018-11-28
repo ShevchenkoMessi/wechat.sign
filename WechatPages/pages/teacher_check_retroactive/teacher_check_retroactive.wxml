@@ -1,0 +1,27 @@
+<!--pages/teacher_check_retroactive/teacher_check_retroactive.wxml-->
+<view>
+  <view wx:for='{{student}}' wx:for-index='id' wx:for-item='item'>
+    <view class='outStyle'>
+      <view>
+        <text decode="{{true}}">姓名；{{item.stuName}}</text>
+      </view>
+      <view decode="{{true}}">
+        <text decode="{{true}}">学号；{{item.stuNo}}</text>
+      </view>
+      <view>
+        补签原因；{{item.msg}}
+      </view>
+    </view>
+    <view class='oneRow'>
+      <view class='inStyleAgree' style="flex:1" id="{{item.stuNo}}" bindtap='agreeOne'>
+        同意
+      </view>
+      <view class='inStyleDisagree'id="{{item.stuNo}}" style="flex:1" bindtap='refuseOne'>
+        拒绝
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class='buttonStyle'>
+<button bindtap='agreeAll'>全部同意</button>
+</view> -->

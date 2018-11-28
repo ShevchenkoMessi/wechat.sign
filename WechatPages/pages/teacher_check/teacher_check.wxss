@@ -1,0 +1,20 @@
+/* pages/teacher_check/teacher_check.wxss */
+.fontStyle{
+  text-align: center;
+  padding-top: 20rpx;
+}
+.singleRow{
+  display: flex;
+  font-size: 50rpx;
+  padding-top: 20rpx;
+  flex-direction: row;
+  padding-left: 100rpx;
+}
+.buttonStyleFirst{
+  padding-top: 20rpx;
+  padding-left: 20%;
+  padding-right: 20%
+}
+.textTopStyle{
+  background-color: #099
+}

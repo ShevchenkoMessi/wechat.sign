@@ -1,0 +1,15 @@
+/* pages/teacher_get_allInfo/teacher_get_allInfo.wxss */
+.pullFirst{
+  font-size: 40rpx;
+  padding-top: 20rpx;
+  text-align: center;
+  
+}
+.gap{
+  width: 100rpx
+}
+.buttonStyle{
+  padding-top: 20rpx;
+  padding-left: 10%;
+  padding-right: 10%
+}

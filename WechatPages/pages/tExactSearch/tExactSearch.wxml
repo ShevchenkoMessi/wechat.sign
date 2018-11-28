@@ -1,0 +1,28 @@
+<view class="item_center" >
+  <text>精确查找</text>
+</view>
+
+<view class="container"> 
+ <view class="login-from"> 
+ <!--姓名-->
+ <text>优先按教职工号查询\n</text>
+ <form bindsubmit="formSubmit">
+ <view class="inputView"> 
+  <label class="loginLab">教师姓名</label> 
+  <input class="inputText" placeholder="不能为空" name="teacherName" /> 
+ </view> 
+ <view class="line"></view> 
+  
+ <!--工号-->
+ <view class="inputView"> 
+  <label class="loginLab">教职工号</label> 
+  <input class="inputText" password="true" placeholder="可不填" name="teacherNo" /> 
+ </view> 
+  
+ <!--按钮-->
+ <view class="loginBtnView"> 
+  <button form-type='submit' class="loginBtn" type="primary">查找</button> 
+ </view> 
+ </form>
+ </view>
+ </view>

@@ -1,0 +1,17 @@
+<view class="item_center" >
+  <text>信息工程学院</text>
+</view>
+
+<canvas style="width: 320px; height:30px;" canvas-id="canvasLine1"/>
+<view wx:for="{{teachers}}">
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">教师姓名</text>
+    <text clas  s="flex-cell flex-row">教职工号</text>
+  </view>
+  <view class="flex-row flex-cell">
+    <view bindtap='getTeacherDetail' data-index="{{item.teacherNo}}"  class="flex-cell flex-row">{{item.teacherName}}</view>
+    <view bindtap='getTeacherDetail' data-index="{{item.teacherNo}}"  class="flex-cell flex-row">{{item.teacherNo}}</view>
+  </view>
+</view>
+</view>

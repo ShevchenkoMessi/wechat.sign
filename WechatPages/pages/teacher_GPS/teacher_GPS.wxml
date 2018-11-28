@@ -1,0 +1,22 @@
+<!--pages/teacher_GPS/teacher_GPS.wxml-->
+<view>
+  <view class='fontStylePoint'>
+    任教科目：{{courseInfo.courseName}}
+  </view>
+  <view class='fontStylePoint'>
+    请打开GPS
+  </view>
+  <!-- <view wx:if="{{!stop}}"> -->
+  <view class='buttonStyle'>
+  <button bindtap='sengGPS'>发布签到位置</button>
+  <!-- </view> -->
+  </view>
+  <!-- <view wx:if="{{stop}}"> -->
+  <view class='buttonStyle'>
+  <button bindtap='deleteLocation'>关闭签到位置</button>
+  <!-- </view> -->
+  </view>
+  <text class='fontStylePoint'>
+    {{success}}
+  </text>
+</view>

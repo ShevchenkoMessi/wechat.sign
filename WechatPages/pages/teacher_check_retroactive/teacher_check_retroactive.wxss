@@ -1,0 +1,32 @@
+/* pages/teacher_check_retroactive/teacher_check_retroactive.wxss */
+.outStyle{
+  border: 2rpx gray solid;
+  font-size: 60rpx;
+  padding-left: 120rpx;
+  padding-top: 30rpx
+}
+.inStyleAgree{
+  height: 90rpx;
+  border: 2rpx gray solid;
+  font-size: 60rpx;
+  color: green;
+  text-align: center;
+  padding-bottom: 2rpx;
+}
+.inStyleDisagree{
+  height: 90rpx;
+  border: 2rpx gray solid;
+  font-size: 60rpx;
+  color: green;
+  text-align: center;
+  padding-bottom: 2rpx;
+}
+.oneRow{
+  display: flex;
+  flex-direction: row
+}
+.buttonStyle{
+  padding-top: 20rpx;
+  padding-left: 10%;
+  padding-right: 10%
+}

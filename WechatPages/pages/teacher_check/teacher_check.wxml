@@ -1,0 +1,39 @@
+  <!--pages/teacher_check/teacher_check.wxml-->
+<view class='fontStyle'>{{classInformation.profession}}{{classInformation.classNo}}班</view>
+<view class='singleRow'>
+  班级总人数:{{classInformation.stuCount}}
+</view>
+<view class='singleRow'>
+  班级号：{{classInformation.classNo}}
+</view>
+<view class='singleRow'>
+ 班长姓名：{{classInformation.monitorName}}
+</view> 
+<view class='singleRow'>
+  班长电话:{{classInformation.monitorTel}}
+</view>
+<view class='buttonStyleFirst'>
+  <button bindtap='retroactive'>查看补签申请</button>
+</view>
+<view class='fontStyle' bindtap='openAndCloseM'>
+  <text class='textTopStyle' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历史签到记录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+  <view wx:if='{{condition}}'>
+    <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+  </view>
+  <view wx:if='{{openH}} && {{!condition}}'>
+    <view wx:for='{{hRegister}}' wx:for-index='id' wx:for-item='item'>
+        <text decode="{{true}}">{{item.stuName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.stuNo}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.times}}次</text>
+    </view>
+  </view>
+</view>
+<view  class='fontStyle' bindtap='openAndCloseH'>
+<text class='textTopStyle' decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本月签到记录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+  <view wx:if='{{condition}}'>
+    <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+  </view>
+  <view wx:if='{{openM}} && {{!condition}}'>
+    <view wx:for='{{mRegister}}' wx:for-index='id' wx:for-item='item'decode="{{true}}">
+        <text decode="{{true}}">{{item.stuName}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.stuNo}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.times.times}}次</text>
+    </view>
+  </view>
+</view>

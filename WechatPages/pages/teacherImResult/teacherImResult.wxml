@@ -1,0 +1,48 @@
+<view bindtap='ifUpdate' class="item_right">修改></view>
+
+<form bindsubmit="formSubmit">
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">姓名</text>
+    <input disabled='{{!ifUpdate}}' name="teacherName" class="flex-cell flex-row" value="{{datas.teacher.teacherName}}"></input>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">职称</text>
+    <input disabled='{{!ifUpdate}}' name="teacherWork"  class="flex-cell flex-row" value="{{datas.teacher.teacherWork}}"></input>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">教师工号</text>
+    <input disabled='{{!ifUpdate}}' name="teacherNo"  class="flex-cell flex-row" value="{{datas.teacher.teacherNo}}"></input>
+  </view>
+  <view wx:if="{{!ifUpdate}}">
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">任教大学</text>
+    <input name="university"  class="flex-cell flex-row" value="{{datas.classes.university}}"></input>
+  </view>
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">任教院系</text>
+    <input name="college"  class="flex-cell flex-row" value="{{datas.classes.college}}"></input>
+  </view>
+  </view>
+    <view wx:for="{{datas.course}}">
+  <view class="flex-row flex-cell">
+    <text class="flex-cell flex-row">任教科目</text>
+    <input disabled='{{!ifUpdate}}' name="courseName"  class="flex-cell flex-row" value="{{item.courseName}}"></input>
+    <input disabled='{{!ifUpdate}}' hidden name="courseNo"  class="flex-cell flex-row" value="{{item.courseNo}}"></input>
+  </view>
+  </view>
+  <view wx:if="{{ifUpdate}}">
+  <button formType="submit">提交</button>
+  </view>
+  
+</view>
+  </form>
+
+<view class="container"> 
+ <view class="login-from">
+ <!--按钮-->
+ <view class="loginBtnView"> 
+  <button data-delete='{{datas.teacher.teacherNo}}' class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" bindtap="deleteTeacher">删除信息</button> 
+ </view> 
+ </view>
+ </view>

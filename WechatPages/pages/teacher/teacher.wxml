@@ -1,0 +1,10 @@
+<view class="container">
+  <view>
+    <button bindtap="onChangeShowState"><view>微积分</view></button>
+  </view>
+  <view class="w_hide{{showViewFirst?'w_show':''}}">
+    <view class='page'>
+      <text>计算机科学与技术1班</text>
+    </view>
+  </view>
+</view>

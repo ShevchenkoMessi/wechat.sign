@@ -1,0 +1,14 @@
+/* pages/teacher_GPS/teacher_GPS.wxss */
+.fontStylePoint{
+  display: flex;
+  font-size: 50rpx;
+  padding-top: 20rpx;
+  flex-direction: row;
+  padding-left: 100rpx;
+  text-align: center
+}
+.buttonStyle{
+    padding-top: 20rpx;
+  padding-left: 20%;
+  padding-right: 20%
+}

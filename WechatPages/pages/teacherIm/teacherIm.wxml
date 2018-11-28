@@ -1,0 +1,16 @@
+
+
+<view class="item_center" >
+  <view>
+    ꧁༺๑功能选择๑༻꧂
+  </view> 
+
+  <view>
+    <navigator url="../tSByDepartment/tSByDepartment">|  按科目查找  |</navigator>
+    <text>\n</text>
+  </view>
+  <view>
+    <navigator url="../tExactSearch/tExactSearch">|  精确查找  |</navigator>
+    <text>\n</text>
+  </view>
+</view>

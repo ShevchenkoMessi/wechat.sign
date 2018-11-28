@@ -1,0 +1,12 @@
+<view>
+    <view  wx:if="{{hasNoFinger}}"><button bindtap='doSign'>手动签到</button>
+</view>
+<view  wx:if="{{!hasNoFinger}}">
+    <view><button bindtap='verifyFingerprint'>验证指纹</button>
+    </view>
+    <view><button bindtap='openGPS'>打开GPS定位</button>
+    </view>
+    <view><button bindtap='getPos'>查看当前的位置信息</button>
+    </view>
+    </view>
+</view>

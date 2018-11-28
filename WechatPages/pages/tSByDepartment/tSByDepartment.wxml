@@ -1,0 +1,21 @@
+<view class="item_center" >
+  <text>按科目查找</text>
+</view>
+
+<view class="container"> 
+ <view class="login-from"> 
+ <!--姓名-->
+ <form bindsubmit="formSubmit">
+ <view class="inputView"> 
+  <label class="loginLab">请输入科目：</label> 
+  <input class="inputText" placeholder="请输入科目" bindinput="phoneInput" name="subject"/> 
+ </view> 
+ <view class="line"></view> 
+  
+ <!--按钮-->
+ <view class="loginBtnView"> 
+  <button form-type='submit' class="loginBtn" type="primary">查找</button> 
+ </view> 
+ </form>
+ </view>
+ </view>

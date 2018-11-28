@@ -1,0 +1,13 @@
+<!--pages/teacher_get_allInfo/teacher_get_allInfo.wxml-->
+<view class='gap'>
+</view>
+<view class='pullFirst'>
+  <view></view>
+  <view wx:for='{{classInformation}}' wx:for-index='id' wx:for-item='item' class='buttonStyle'>
+  <form bindsubmit="formSubmit">
+    <input value='{{id}}' hidden name='classID'></input>
+    <button form-type='submit'>{{item.profession}}{{item.classNo}}班</button>
+  </form>
+  </view>
+  <!-- <button bindtap='testAAA'>11111111111111111111111</button> -->
+</view>
